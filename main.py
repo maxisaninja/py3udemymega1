@@ -1,7 +1,7 @@
 # test file
 
-def minutes_to_hours(minutes):
-    return float(minutes) / 60
+def min_sec_to_hours(minutes, sec):
+    return minutes / 60 + sec / 3600
 
-ans = minutes_to_hours(input("Enter number of minutes:"))
-print(ans, " hours")
+ans = min_sec_to_hours(70, 5000)
+print(ans, "hours")
