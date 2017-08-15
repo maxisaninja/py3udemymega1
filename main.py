@@ -1,7 +1,9 @@
 # test file
 
-def min_sec_to_hours(minutes, sec):
-    return minutes / 60 + sec / 3600
+def agefoo(age):
+    new_age = float(age) + 30
+    return new_age
 
-ans = min_sec_to_hours(70, 5000)
-print(ans, "hours")
+
+age = input("Enter your age: ")
+print(agefoo(age))
