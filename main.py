@@ -1,9 +1,7 @@
 # test file
 
-def agefoo(age):
-    new_age = float(age) + 30
-    return new_age
+def celsius_to_farenheit(c):
+    return c * 9/5 + 32
 
-
-age = input("Enter your age: ")
-print(agefoo(age))
+temp = int(input("Enter temp in C: "))
+print(celsius_to_farenheit(temp))
