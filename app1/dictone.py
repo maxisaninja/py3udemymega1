@@ -15,19 +15,23 @@ def lookup(term):
     term = term.lower()
     if term in data:
         return data[term]
+    res = get_close_matches(term, data.keys())
+    if res:
+        i = input("Did you mean \'%s\'? " % res[0])
+        if i:
+            if i.lower()[0] == 'y':
+                return data[res[0]]
+        return "Sorry, try searching again."
     else:
-        res = get_close_matches(term, data.keys())
-        if res:
-            i = input("Did you mean \'" + res[0] + "\'? ")
-            if i:
-                if i.lower()[0] == 'y':
-                    return data[res[0]]
-            return "Sorry, try searching agian."
-        else:
-            return "Sorry, that wasn't found in the dictionary."
+        return "Sorry, that wasn't found in the dictionary."
 
 def main():
     search = input("Enter word to look up: ")
-    print(lookup(search))
-
+    result = lookup(search)
+    if type(result) == list:
+        for definition in result:
+            print(definition)
+    else:
+        print(result)
+        
 if __name__ == '__main__': main()
